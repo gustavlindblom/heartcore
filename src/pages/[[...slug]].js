@@ -11,9 +11,11 @@ export default function Page({ content }) {
 
 export async function getStaticProps({ params }) {
   const content = await getPageFromUrl(urlArrayToString(params.slug));
+  const notFound = content ? false : true;
   return {
     props: { content },
-    revalidate: 10
+    revalidate: 10,
+    notFound,
   };
 }
 
