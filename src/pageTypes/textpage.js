@@ -19,7 +19,7 @@ export default function Textpage({ page }) {
             <Menu />
           </Header>
           
-          <div id='menu'></div>
+          <div id='menu'> </div>
     
           <Layout>
             <PageElements pageElements={page.elements} />
