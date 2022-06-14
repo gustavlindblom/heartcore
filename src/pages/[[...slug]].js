@@ -12,7 +12,8 @@ export default function Page({ content }) {
 export async function getStaticProps({ params }) {
   const content = await getPageFromUrl(urlArrayToString(params.slug));
   return {
-    props: { content }
+    props: { content },
+    revalidate: 10
   };
 }
 
