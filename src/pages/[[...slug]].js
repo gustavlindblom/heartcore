@@ -1,5 +1,3 @@
-import Head from 'next/head';
-import Link from 'next/link';
 import { getAllPages, root, getPageFromUrl } from '../../lib/umbracoApi';
 import DynamicPage from '../pageTypes/dynamicPage';
 
@@ -14,7 +12,7 @@ export async function getStaticProps({ params }) {
   const notFound = content ? false : true;
   return {
     props: { content },
-    revalidate: 10,
+    revalidate: 60,
     notFound,
   };
 }
